@@ -2,8 +2,14 @@
 
 #include "ofMain.h"
 #include "ofxProjectorBlend.h"
+#include "ofxSimpleGuiToo.h"
 
-class testApp : public ofBaseApp{
+#define PROJECTOR_COUNT 3
+#define PROJECTOR_WIDTH 640
+#define PROJECTOR_HEIGHT 480
+#define PIXEL_OVERLAP 40
+
+class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
@@ -19,8 +25,6 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+
         ofxProjectorBlend blender;
-        ofPoint pos, vel;
-        float radius;
 };

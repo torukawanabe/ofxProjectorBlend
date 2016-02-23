@@ -8,7 +8,7 @@
 #define PROJECTOR_HEIGHT 480
 #define PIXEL_OVERLAP 40
 
-class testApp : public ofBaseApp{
+class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
@@ -24,7 +24,7 @@ class testApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		
+
         ofxProjectorBlend blender;
         ofImage blendClown;
         bool bDrawClown;

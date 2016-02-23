@@ -99,7 +99,7 @@
 	</ItemDefinitionGroup>
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
-		<ClCompile Include="src\testApp.cpp" />
+		<ClCompile Include="src\ofApp.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxXmlSettings\libs\tinyxmlerror.cpp" />
@@ -123,7 +123,7 @@
 		<ClCompile Include="..\..\..\addons\ofxSimpleGuiToo\src\ofxSimpleGuiValueControl.cpp" />
 	</ItemGroup>
 	<ItemGroup>
-		<ClInclude Include="src\testApp.h" />
+		<ClInclude Include="src\ofApp.h" />
 		<ClInclude Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h" />
 		<ClInclude Include="..\..\..\addons\ofxXmlSettings\libs\tinyxml.h" />
 		<ClInclude Include="..\..\..\addons\ofxMSAInteractiveObject\src\ofxMSAInteractiveObject.h" />

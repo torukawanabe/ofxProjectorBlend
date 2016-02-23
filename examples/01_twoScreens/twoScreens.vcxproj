@@ -99,11 +99,11 @@
 	</ItemDefinitionGroup>
 	<ItemGroup>
 		<ClCompile Include="src\main.cpp" />
-		<ClCompile Include="src\testApp.cpp" />
+		<ClCompile Include="src\ofApp.cpp" />
 		<ClCompile Include="..\..\..\addons\ofxProjectorBlend\src\ofxProjectorBlend.cpp" />
 	</ItemGroup>
 	<ItemGroup>
-		<ClInclude Include="src\testApp.h" />
+		<ClInclude Include="src\ofApp.h" />
 		<ClInclude Include="..\..\..\addons\ofxProjectorBlend\src\ofxProjectorBlend.h" />
 		<ClInclude Include="..\..\..\addons\ofxProjectorBlend\src\ofxProjectorBlendShader.h" />
 	</ItemGroup>
