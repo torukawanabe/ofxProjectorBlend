@@ -1,0 +1,4 @@
+ofxProjectorBlend
+ofxSimpleGuiToo
+ofxXmlSettings
+ofxMSAInteractiveObject
