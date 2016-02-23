@@ -31,7 +31,7 @@ void ofApp::draw(){
     {
         //light gray backaground
         ofSetColor(100, 100, 100);
-        ofRect(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
+        ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
 
         //thick grid lines for blending
         ofSetColor(255, 255, 255);
@@ -39,12 +39,12 @@ void ofApp::draw(){
 
         //vertical line
         for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
-            ofLine(i, 0, i, blender.getCanvasHeight());
+            ofDrawLine(i, 0, i, blender.getCanvasHeight());
         }
 
         //horizontal lines
         for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
-            ofLine(0, j, blender.getCanvasWidth(), j);
+            ofDrawLine(0, j, blender.getCanvasWidth(), j);
         }
 	}
 	blender.end(); //call when you are finished drawing

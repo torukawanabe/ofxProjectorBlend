@@ -9,7 +9,7 @@ void ofApp::setup(){
     cout << "canvas size: " << blender.getCanvasWidth() << " x " << blender.getCanvasHeight() << endl;
     cout << "display size: " << blender.getDisplayWidth() << " x " << blender.getDisplayHeight() << endl;
 
-    blendClown.loadImage("blendClown.png");
+    blendClown.load("blendClown.png");
     bDrawClown = false;
 }
 
@@ -24,7 +24,7 @@ void ofApp::draw(){
     {
         //light gray backaground
         ofSetColor(100, 100, 100);
-        ofRect(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
+        ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
 
         //thick grid lines for blending
         ofSetColor(255, 255, 255);
@@ -32,12 +32,12 @@ void ofApp::draw(){
 
         //vertical line
         for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
-            ofLine(i, 0, i, blender.getCanvasHeight());
+            ofDrawLine(i, 0, i, blender.getCanvasHeight());
         }
 
         //horizontal lines
         for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
-            ofLine(0, j, blender.getCanvasWidth(), j);
+            ofDrawLine(0, j, blender.getCanvasWidth(), j);
         }
 
         if(bDrawClown) {
@@ -46,7 +46,7 @@ void ofApp::draw(){
 
         //instructions
         ofSetColor(255, 255, 255);
-        ofRect(10, 10, 300, 100);
+        ofDrawRectangle(10, 10, 300, 100);
         ofSetColor(0, 0, 0);
         stringstream instructions;
         instructions << "SPACE - toggle show blend" << endl;
