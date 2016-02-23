@@ -1,5 +1,4 @@
 ofxProjectorBlend
 ofxSimpleGuiToo
-ofxSimpleButton
 ofxXmlSettings
 ofxMSAInteractiveObject
