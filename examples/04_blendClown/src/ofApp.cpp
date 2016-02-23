@@ -3,14 +3,14 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    blender.setup(PROJECTOR_WIDTH, PROJECTOR_HEIGHT, PROJECTOR_COUNT, PIXEL_OVERLAP);
-    blender.setWindowToDisplaySize();
+	blender.setup(PROJECTOR_WIDTH, PROJECTOR_HEIGHT, PROJECTOR_COUNT, PIXEL_OVERLAP);
+	blender.setWindowToDisplaySize();
 
-    cout << "canvas size: " << blender.getCanvasWidth() << " x " << blender.getCanvasHeight() << endl;
-    cout << "display size: " << blender.getDisplayWidth() << " x " << blender.getDisplayHeight() << endl;
+	cout << "canvas size: " << blender.getCanvasWidth() << " x " << blender.getCanvasHeight() << endl;
+	cout << "display size: " << blender.getDisplayWidth() << " x " << blender.getDisplayHeight() << endl;
 
-    blendClown.load("blendClown.png");
-    bDrawClown = false;
+	blendClown.load("blendClown.png");
+	bDrawClown = false;
 }
 
 //--------------------------------------------------------------
@@ -21,40 +21,40 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	blender.begin(); //call blender.begin() to draw onto the blendable canvas
-    {
-        //light gray backaground
-        ofSetColor(100, 100, 100);
-        ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
+	{
+		//light gray backaground
+		ofSetColor(100, 100, 100);
+		ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
 
-        //thick grid lines for blending
-        ofSetColor(255, 255, 255);
-        ofSetLineWidth(3);
+		//thick grid lines for blending
+		ofSetColor(255, 255, 255);
+		ofSetLineWidth(3);
 
-        //vertical line
-        for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
-            ofDrawLine(i, 0, i, blender.getCanvasHeight());
-        }
+		//vertical line
+		for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
+			ofDrawLine(i, 0, i, blender.getCanvasHeight());
+		}
 
-        //horizontal lines
-        for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
-            ofDrawLine(0, j, blender.getCanvasWidth(), j);
-        }
+		//horizontal lines
+		for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
+			ofDrawLine(0, j, blender.getCanvasWidth(), j);
+		}
 
-        if(bDrawClown) {
-            blendClown.draw(0, 0);
-        }
+		if(bDrawClown) {
+			blendClown.draw(0, 0);
+		}
 
-        //instructions
-        ofSetColor(255, 255, 255);
-        ofDrawRectangle(10, 10, 300, 100);
-        ofSetColor(0, 0, 0);
-        stringstream instructions;
-        instructions << "SPACE - toggle show blend" << endl;
-        instructions << "[g/G] - adjust gamma" << endl;
-        instructions << "[p/P] - adjust blend power" << endl;
-        instructions << "[l/L] - adjust luminance" << endl;
-        instructions << "[c] - show/hide blend clown" << endl;
-        ofDrawBitmapString(instructions.str(), 15, 35);
+		//instructions
+		ofSetColor(255, 255, 255);
+		ofDrawRectangle(10, 10, 300, 100);
+		ofSetColor(0, 0, 0);
+		stringstream instructions;
+		instructions << "SPACE - toggle show blend" << endl;
+		instructions << "[g/G] - adjust gamma" << endl;
+		instructions << "[p/P] - adjust blend power" << endl;
+		instructions << "[l/L] - adjust luminance" << endl;
+		instructions << "[c] - show/hide blend clown" << endl;
+		ofDrawBitmapString(instructions.str(), 15, 35);
 
 	}
 	blender.end(); //call when you are finished drawing
@@ -104,8 +104,8 @@ void ofApp::keyReleased(int key){
 		blender.blendPower[0]  += .05;
 		blender.blendPower[1] += .05;
 	}else if (key=='c') {
-        bDrawClown = !bDrawClown;
-    }
+		bDrawClown = !bDrawClown;
+	}
 }
 
 //--------------------------------------------------------------

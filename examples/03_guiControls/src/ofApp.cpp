@@ -3,21 +3,21 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
-    blender.setup(PROJECTOR_WIDTH, PROJECTOR_HEIGHT, PROJECTOR_COUNT, PIXEL_OVERLAP);
+	blender.setup(PROJECTOR_WIDTH, PROJECTOR_HEIGHT, PROJECTOR_COUNT, PIXEL_OVERLAP);
 	blender.setWindowToDisplaySize();
 
 
 	gui.addToggle("Show Blend", blender.showBlend);
 
-    for (int i=0; i<PROJECTOR_COUNT-1; i++)
-    {
-        gui.addSlider("Blend Power "+ofToString(i+1), blender.blendPower[i], 0.0, 4.0);
-        gui.addSlider("Gamma "+ofToString(i+1), blender.gamma[i], 0.1, 4.0);
-        gui.addSlider("Luminance "+ofToString(i+1), blender.luminance[i], 0.0, 1.0);
-    }
+	for (int i=0; i<PROJECTOR_COUNT-1; i++)
+	{
+		gui.addSlider("Blend Power "+ofToString(i+1), blender.blendPower[i], 0.0, 4.0);
+		gui.addSlider("Gamma "+ofToString(i+1), blender.gamma[i], 0.1, 4.0);
+		gui.addSlider("Luminance "+ofToString(i+1), blender.luminance[i], 0.0, 1.0);
+	}
 
-    gui.loadFromXML();
-    gui.show();
+	gui.loadFromXML();
+	gui.show();
 }
 
 //--------------------------------------------------------------
@@ -28,24 +28,24 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 	blender.begin(); //call blender.begin() to draw onto the blendable canvas
-    {
-        //light gray backaground
-        ofSetColor(100, 100, 100);
-        ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
+	{
+		//light gray backaground
+		ofSetColor(100, 100, 100);
+		ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
 
-        //thick grid lines for blending
-        ofSetColor(255, 255, 255);
-        ofSetLineWidth(3);
+		//thick grid lines for blending
+		ofSetColor(255, 255, 255);
+		ofSetLineWidth(3);
 
-        //vertical line
-        for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
-            ofDrawLine(i, 0, i, blender.getCanvasHeight());
-        }
+		//vertical line
+		for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
+			ofDrawLine(i, 0, i, blender.getCanvasHeight());
+		}
 
-        //horizontal lines
-        for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
-            ofDrawLine(0, j, blender.getCanvasWidth(), j);
-        }
+		//horizontal lines
+		for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
+			ofDrawLine(0, j, blender.getCanvasWidth(), j);
+		}
 	}
 	blender.end(); //call when you are finished drawing
 
@@ -54,8 +54,8 @@ void ofApp::draw(){
 	blender.draw();
 
 
-    // We might not want the GUI to be blended...
-    gui.draw();
+	// We might not want the GUI to be blended...
+	gui.draw();
 }
 
 //--------------------------------------------------------------
@@ -65,8 +65,8 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-    if(key=='g' || key=='G')
-        gui.toggleDraw();
+	if(key=='g' || key=='G')
+		gui.toggleDraw();
 }
 
 //--------------------------------------------------------------

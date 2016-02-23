@@ -7,10 +7,10 @@ void ofApp::setup(){
 	blender.blendPower[0] = 1;
 	blender.luminance[0] = 0;
 
-    cout << "canvas size: " << blender.getCanvasWidth() << " x " << blender.getCanvasHeight() << endl;
-    cout << "display size: " << blender.getDisplayWidth() << " x " << blender.getDisplayHeight() << endl;
+	cout << "canvas size: " << blender.getCanvasWidth() << " x " << blender.getCanvasHeight() << endl;
+	cout << "display size: " << blender.getDisplayWidth() << " x " << blender.getDisplayHeight() << endl;
 
-    ofSetWindowShape(blender.getDisplayWidth(), blender.getDisplayHeight());
+	ofSetWindowShape(blender.getDisplayWidth(), blender.getDisplayHeight());
 }
 
 //--------------------------------------------------------------
@@ -22,30 +22,30 @@ void ofApp::update(){
 void ofApp::draw() {
 
 	blender.begin(); //call blender.begin() to draw onto the blendable canvas
-    {
-        //light gray backaground
-        ofSetColor(100, 100, 100);
-        ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
+	{
+		//light gray backaground
+		ofSetColor(100, 100, 100);
+		ofDrawRectangle(0, 0, blender.getCanvasWidth(), blender.getCanvasHeight());
 
-        //thick grid lines for blending
-        ofSetColor(255, 255, 255);
-        ofSetLineWidth(3);
+		//thick grid lines for blending
+		ofSetColor(255, 255, 255);
+		ofSetLineWidth(3);
 
-        //vertical line
-        for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
-            ofDrawLine(i, 0, i, blender.getCanvasHeight());
-        }
+		//vertical line
+		for(int i = 0; i <= blender.getCanvasWidth(); i+=40){
+			ofDrawLine(i, 0, i, blender.getCanvasHeight());
+		}
 
-        //horizontal lines
-        for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
-            ofDrawLine(0, j, blender.getCanvasWidth(), j);
-        }
+		//horizontal lines
+		for(int j = 0; j <= blender.getCanvasHeight(); j+=40){
+			ofDrawLine(0, j, blender.getCanvasWidth(), j);
+		}
 
-        //instructions
-        ofSetColor(255, 255, 255);
-        ofDrawRectangle(10, 10, 300, 100);
-        ofSetColor(0, 0, 0);
-        ofDrawBitmapString("SPACE - toggle show blend\n[g/G] - adjust gamma\n[p/P] - adjust blend power\n[l/L] adjust luminance", 15, 35);
+		//instructions
+		ofSetColor(255, 255, 255);
+		ofDrawRectangle(10, 10, 300, 100);
+		ofSetColor(0, 0, 0);
+		ofDrawBitmapString("SPACE - toggle show blend\n[g/G] - adjust gamma\n[p/P] - adjust blend power\n[l/L] adjust luminance", 15, 35);
 	}
 	blender.end(); //call when you are finished drawing
 

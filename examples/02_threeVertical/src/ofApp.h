@@ -20,7 +20,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-        ofxProjectorBlend blender;
-        ofPoint pos, vel;
-        float radius;
+		ofxProjectorBlend blender;
+		ofPoint pos, vel;
+		float radius;
 };
