@@ -62,18 +62,18 @@ void ofxProjectorBlend::setup(int resolutionWidth,
 	if(layout == ofxProjectorBlend_Vertical) {
 		fullTextureWidth = singleChannelWidth;
 		fullTextureHeight = singleChannelHeight*numProjectors - pixelOverlap*(numProjectors-1);
+        displayWidth = resolutionWidth;
+        displayHeight = resolutionHeight*numProjectors;
 	}
 	else if(layout == ofxProjectorBlend_Horizontal) {
 		fullTextureWidth = singleChannelWidth*numProjectors - pixelOverlap*(numProjectors-1);
 		fullTextureHeight = singleChannelHeight;
+        displayWidth = resolutionWidth*numProjectors;
+        displayHeight = resolutionHeight;
 	} else {
 		ofLog(OF_LOG_ERROR, "ofxProjectorBlend: You have used an invalid ofxProjectorBlendLayout in ofxProjectorBlend::setup()");
 		return;
 	}
-
-
-	displayWidth = resolutionWidth*numProjectors;
-	displayHeight = resolutionHeight;
 
 	fullTexture.allocate(fullTextureWidth, fullTextureHeight, GL_RGB, 4);
 
@@ -261,10 +261,17 @@ void ofxProjectorBlend::draw(float x, float y) {
 			}
 
 			if(rotation == ofxProjectorBlend_RotatedLeft || rotation == ofxProjectorBlend_RotatedRight) {
-				glTranslatef(singleChannelHeight, 0, 0);
-			}
-			else {
-				glTranslatef(singleChannelWidth, 0, 0);
+                if(layout == ofxProjectorBlend_Horizontal){
+                    glTranslatef(singleChannelHeight, 0, 0);
+                }else{
+                    glTranslatef(0, singleChannelWidth, 0);
+                }
+			}else {
+                if(layout == ofxProjectorBlend_Horizontal){
+                    glTranslatef(singleChannelWidth, 0, 0);
+                }else{
+                    glTranslatef(0, singleChannelHeight, 0);
+                }
 			}
 
 		}
