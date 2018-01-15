@@ -27,11 +27,11 @@ void ofxProjectorBlend::setup(int resolutionWidth,
 {
 
 	string l = "horizontal";
-	if(layout==ofxProjectorBlend_Vertical) l = "vertical";
+	if(_layout==ofxProjectorBlend_Vertical) l = "vertical";
 
 	string r = "normal";
-	if(rotation==ofxProjectorBlend_RotatedLeft) r = "rotated left";
-	else if(rotation==ofxProjectorBlend_RotatedRight) r = "rotated right";
+	if(_rotation==ofxProjectorBlend_RotatedLeft) r = "rotated left";
+	else if(_rotation==ofxProjectorBlend_RotatedRight) r = "rotated right";
 
 	ofLog(OF_LOG_NOTICE, "ofxProjectorBlend: res: %d x %d * %d, overlap: %d pixels, layout: %s, rotation: %s\n", resolutionWidth, resolutionHeight, _numProjectors, _pixelOverlap, l.c_str(), r.c_str());
 	numProjectors = _numProjectors;
