@@ -40,7 +40,6 @@ class ofxProjectorBlend
 
 	void draw(float x = 0, float y = 0);
 
-
 	// this is how big the area to draw to is.
 	float getCanvasWidth();
 	float getCanvasHeight();
@@ -63,7 +62,8 @@ class ofxProjectorBlend
 
 	void moveDisplayVertical(unsigned int targetDisplay, int yOffset);
 
-
+    void setPixelOverLap(float numPixels);
+    
 	/** This changes your app's window size to the correct output size */
 	void setWindowToDisplaySize();
 

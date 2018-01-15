@@ -121,6 +121,23 @@ void ofxProjectorBlend::moveDisplayVertical(unsigned int targetDisplay, int yOff
 	projectorHeightOffset[targetDisplay] += yOffset;
 }
 
+// --------------------------------------------------
+void ofxProjectorBlend::setPixelOverLap(float numPixels) {
+    pixelOverlap = numPixels;
+    if(layout == ofxProjectorBlend_Vertical) {
+        fullTextureWidth = singleChannelWidth;
+        fullTextureHeight = singleChannelHeight*numProjectors - pixelOverlap*(numProjectors-1);
+    } else if(layout == ofxProjectorBlend_Horizontal) {
+        fullTextureWidth = singleChannelWidth*numProjectors - pixelOverlap*(numProjectors-1);
+        fullTextureHeight = singleChannelHeight;
+    } else {
+        ofLog(OF_LOG_ERROR, "ofxProjectorBlend: You have used an invalid ofxProjectorBlendLayout in ofxProjectorBlend::setup()");
+        return;
+    }
+    
+    fullTexture.clear();
+    fullTexture.allocate(fullTextureWidth, fullTextureHeight, GL_RGB, 4);
+}
 
 // --------------------------------------------------
 // This changes your app's window size to the correct output size
