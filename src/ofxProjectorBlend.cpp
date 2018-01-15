@@ -123,8 +123,11 @@ void ofxProjectorBlend::moveDisplayVertical(unsigned int targetDisplay, int yOff
 
 // --------------------------------------------------
 void ofxProjectorBlend::setPixelOverLap(float numPixels) {
+<<<<<<< HEAD
     if(pixelOverlap == numPixels) return;
     
+=======
+>>>>>>> c9555168a29942d5dcc2521bb5cf7731fcfa5fe5
     pixelOverlap = numPixels;
     if(layout == ofxProjectorBlend_Vertical) {
         fullTextureWidth = singleChannelWidth;
